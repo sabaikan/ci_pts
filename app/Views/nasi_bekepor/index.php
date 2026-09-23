@@ -15,13 +15,12 @@
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#581C87',       /* Deep Purple from prompt */
+                        brandDark: '#581C87',       /* Deep Purple */
                         brandDeep: '#3B0764',       /* Darkest Royal Purple */
-                        brandPink: '#D946EF',       /* Fuchsia Accent from prompt */
+                        brandPink: '#D946EF',       /* Fuchsia Accent */
                         brandPinkLight: '#F0ABFC',
-                        brandCream: '#FAF6F0',      /* Editorial Cream from reference */
+                        brandCream: '#FAF6F0',      /* Editorial Cream */
                         brandCreamDark: '#EFE7DA',  /* Soft pedestal background */
-                        brandMuted: '#9CA3AF',
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
@@ -48,18 +47,20 @@
 </head>
 <body class="bg-brandCream text-gray-900 font-sans antialiased selection:bg-brandPink selection:text-white">
 
-    <!-- Flash Messages (Tailwind Alert) -->
+    <!-- Flash Messages (Tailwind Alert dengan Icon Minimalis) -->
     <?php if (session()->getFlashdata('success')): ?>
-        <div id="flash-success" class="fixed top-5 right-5 z-50 bg-emerald-700 text-white px-6 py-4 rounded-full shadow-2xl flex items-center space-x-3 border border-emerald-400/30">
-            <span>✨ <?= session()->getFlashdata('success') ?></span>
-            <button onclick="document.getElementById('flash-success').remove()" class="text-white/80 hover:text-white font-bold ml-2">&times;</button>
+        <div id="flash-success" class="fixed top-5 right-5 z-50 bg-neutral-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center space-x-3 border border-neutral-700">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-xs font-medium"><?= session()->getFlashdata('success') ?></span>
+            <button onclick="document.getElementById('flash-success').remove()" class="text-gray-400 hover:text-white font-bold ml-2">&times;</button>
         </div>
     <?php endif; ?>
 
     <?php if (session()->getFlashdata('error')): ?>
-        <div id="flash-error" class="fixed top-5 right-5 z-50 bg-rose-700 text-white px-6 py-4 rounded-full shadow-2xl flex items-center space-x-3 border border-rose-400/30">
-            <span>⚠️ <?= session()->getFlashdata('error') ?></span>
-            <button onclick="document.getElementById('flash-error').remove()" class="text-white/80 hover:text-white font-bold ml-2">&times;</button>
+        <div id="flash-error" class="fixed top-5 right-5 z-50 bg-neutral-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center space-x-3 border border-rose-500/30">
+            <svg class="w-4 h-4 text-rose-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            <span class="text-xs font-medium"><?= session()->getFlashdata('error') ?></span>
+            <button onclick="document.getElementById('flash-error').remove()" class="text-gray-400 hover:text-white font-bold ml-2">&times;</button>
         </div>
     <?php endif; ?>
 
@@ -81,13 +82,14 @@
                 <a href="#heritage" class="border border-white/40 hover:border-brandPink hover:text-brandPink px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider transition hidden sm:inline-block">
                     Asal Usul
                 </a>
-                <button onclick="openModalTambah()" class="bg-brandPink hover:bg-brandPinkLight hover:text-brandDeep text-white font-semibold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider transition shadow-md shadow-brandPink/30 flex items-center space-x-1">
-                    <span>+</span>
+                <button onclick="openModalTambah()" class="bg-brandDeep/80 hover:bg-brandDeep text-white border border-purple-300/30 font-medium px-4 py-1.5 rounded-full text-xs uppercase tracking-wider transition shadow-sm flex items-center space-x-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
                     <span>Tambah Menu</span>
                 </button>
                 <div class="flex items-center space-x-3 pl-2 text-white/90">
-                    <span class="text-xs font-semibold bg-white/10 px-3 py-1 rounded-full border border-white/20">
-                        📍 Kaltim
+                    <span class="text-xs font-semibold bg-white/10 px-3 py-1 rounded-full border border-white/20 flex items-center space-x-1.5">
+                        <svg class="w-3 h-3 text-brandPinkLight" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>Kaltim</span>
                     </span>
                     <button class="hover:text-brandPink transition">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
@@ -98,9 +100,6 @@
 
         <!-- Big Hero Title & Description -->
         <div class="max-w-4xl mx-auto text-center mt-16 sm:mt-20">
-            <div class="inline-block bg-brandPink/20 border border-brandPink/40 text-brandPinkLight px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest mb-4">
-                ✨ Traditional Kutai Rice Reimagined
-            </div>
             <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl tracking-[0.08em] font-extrabold uppercase leading-none drop-shadow-sm">
                 HANIF THEORY
             </h1>
@@ -109,47 +108,53 @@
             </p>
         </div>
 
-        <!-- 3 Featured Plates (Dilengkapi Gambar AI Nasi Bekepor) -->
-        <div class="max-w-6xl mx-auto mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
-            <!-- Plate 1 (AI Image) -->
-            <a href="<?= base_url('makanan/detail/1') ?>" class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border border-brandPink/30 shadow-2xl transition-all duration-500 hover:-translate-y-2 block">
-                <div class="h-64 sm:h-72 overflow-hidden">
-                    <img src="<?= base_url('images/nasi_bekepor_ai.jpg') ?>" alt="Nasi Bekepor Daging Masak Bumi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <!-- 3 Seamless Featured Dishes (Tanpa Box/Card, Persis Desain Banner Crumb Theory) -->
+        <div class="max-w-6xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-end">
+            <!-- Plate 1 -->
+            <a href="<?= base_url('makanan/detail/1') ?>" class="group flex flex-col items-center text-center transition-transform duration-500 hover:-translate-y-3">
+                <div class="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square flex items-center justify-center">
+                    <img src="<?= base_url('images/nasi_bekepor_hero.png') ?>" alt="Nasi Bekepor Daging Masak Bumi" 
+                         class="w-full h-full object-contain filter drop-shadow-[0_25px_30px_rgba(0,0,0,0.55)] transition-transform duration-700 group-hover:scale-105">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/20 to-transparent flex items-end p-5">
-                    <div>
-                        <span class="text-[10px] font-bold tracking-widest uppercase bg-brandPink text-white px-2.5 py-0.5 rounded-full inline-block mb-1">✨ AI Generated Art</span>
-                        <h4 class="font-serif text-xl font-bold text-white">Nasi Bekepor Daging Bumi</h4>
-                        <span class="text-xs text-brandPinkLight font-semibold">Lihat Detail &rarr;</span>
-                    </div>
+                <div class="mt-4">
+                    <h4 class="font-serif text-lg font-bold text-white tracking-wide group-hover:text-brandPinkLight transition">Nasi Bekepor Daging Bumi</h4>
+                    <span class="text-xs text-brandPinkLight/80 font-medium inline-flex items-center space-x-1 mt-1">
+                        <span>Lihat Detail</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </span>
                 </div>
             </a>
 
-            <!-- Plate 2 (Centerpiece / AI Detail Highlight) -->
-            <a href="<?= base_url('makanan/detail/8') ?>" class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border-2 border-brandPink shadow-2xl transition-all duration-500 hover:-translate-y-3 md:-translate-y-4 block">
-                <div class="h-72 sm:h-80 overflow-hidden">
-                    <img src="<?= base_url('images/nasi_bekepor_detail_ai.jpg') ?>" alt="Nasi Bekepor Royal Sultan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <!-- Plate 2 (Centerpiece) -->
+            <a href="<?= base_url('makanan/detail/8') ?>" class="group flex flex-col items-center text-center transition-transform duration-500 hover:-translate-y-3 md:-translate-y-4">
+                <div class="relative w-full max-w-[320px] sm:max-w-[360px] aspect-square flex items-center justify-center">
+                    <img src="<?= base_url('images/nasi_bekepor_hero.png') ?>" alt="Nasi Bekepor Royal Sultan" 
+                         class="w-full h-full object-contain filter drop-shadow-[0_30px_35px_rgba(0,0,0,0.65)] transition-transform duration-700 group-hover:scale-105">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/30 to-transparent flex items-end p-6">
-                    <div>
-                        <span class="bg-brandPink text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">✨ AI Royal Feast</span>
-                        <h4 class="font-serif text-2xl font-bold text-white">Nasi Bekepor Royal Sultan</h4>
-                        <span class="text-xs text-brandPinkLight font-semibold">Jelajahi Resep Keraton &rarr;</span>
-                    </div>
+                <div class="mt-4">
+                    <span class="bg-white/15 text-brandPinkLight text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-1.5 inline-block border border-white/20">
+                        Royal Signature
+                    </span>
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-white tracking-wide group-hover:text-brandPinkLight transition">Nasi Bekepor Royal Sultan</h4>
+                    <span class="text-xs text-brandPinkLight/80 font-medium inline-flex items-center space-x-1 mt-1">
+                        <span>Jelajahi Resep Keraton</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </span>
                 </div>
             </a>
 
             <!-- Plate 3 -->
-            <a href="<?= base_url('makanan/detail/2') ?>" class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border border-brandPink/30 shadow-2xl transition-all duration-500 hover:-translate-y-2 block">
-                <div class="h-64 sm:h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=700&q=80" alt="Nasi Bekepor Ikan Haruan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <a href="<?= base_url('makanan/detail/2') ?>" class="group flex flex-col items-center text-center transition-transform duration-500 hover:-translate-y-3">
+                <div class="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square flex items-center justify-center">
+                    <img src="<?= base_url('images/nasi_bekepor_hero.png') ?>" alt="Nasi Bekepor Ikan Haruan" 
+                         class="w-full h-full object-contain filter drop-shadow-[0_25px_30px_rgba(0,0,0,0.55)] transition-transform duration-700 group-hover:scale-105 [transform:scaleX(-1)]">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/20 to-transparent flex items-end p-5">
-                    <div>
-                        <span class="text-[11px] font-semibold tracking-widest uppercase text-brandPinkLight">Sungai Mahakam</span>
-                        <h4 class="font-serif text-xl font-bold text-white">Nasi Bekepor Ikan Haruan</h4>
-                        <span class="text-xs text-brandPinkLight font-semibold">Lihat Detail &rarr;</span>
-                    </div>
+                <div class="mt-4">
+                    <h4 class="font-serif text-lg font-bold text-white tracking-wide group-hover:text-brandPinkLight transition">Nasi Bekepor Ikan Haruan</h4>
+                    <span class="text-xs text-brandPinkLight/80 font-medium inline-flex items-center space-x-1 mt-1">
+                        <span>Lihat Detail</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </span>
                 </div>
             </a>
         </div>
@@ -158,7 +163,6 @@
 
     <!-- ========================================== -->
     <!-- SECTION 2: THE PROOF IS IN THE SPICES      -->
-    <!-- (Cream background dengan foto + ilustrasi) -->
     <!-- ========================================== -->
     <section id="heritage" class="max-w-7xl mx-auto py-24 px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <!-- Kolom Kiri: Foto berseni + badge doodle -->
@@ -166,12 +170,6 @@
             <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
                 <img src="<?= base_url('images/nasi_bekepor_ai.jpg') ?>" alt="Rempah Nasi Bekepor Hanif Theory" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-brandDark/10 mix-blend-multiply"></div>
-            </div>
-
-            <!-- Artistic line doodle badge overlay -->
-            <div class="absolute -bottom-8 -right-4 sm:-bottom-10 sm:right-6 bg-brandDark text-white p-6 rounded-3xl shadow-2xl border-2 border-brandPink/40 max-w-[240px] transform rotate-2">
-                <span class="text-2xl block mb-1">👑</span>
-                <p class="font-serif text-sm font-semibold tracking-wide leading-tight">Hanif Theory: Cita Rasa Bangsawan Kutai Abad ke-13</p>
             </div>
         </div>
 
@@ -186,7 +184,7 @@
                     Di bawah naungan <strong>HANIF THEORY</strong>, Nasi Bekepor dihadirkan kembali dengan menjaga keaslian racikan bumbu khas Kesultanan Kutai Kartanegara, Kalimantan Timur.
                 </p>
                 <p>
-                    Beras dimasak perlahan di dalam kuali tembikar dengan santan kelapa murni, daun kemangi segar, dan irisan ikan asin jambal roti. Dipadukan dengan Sambal Raja 6 rasa yang pedas bergelora.
+                    Beras dimasak perlahan di dalam kuali tembikar dengan santan kelapa murni, daun kemangi segar, dan irisan ikan asin jambal roti. Dipadukan dengan Sambal Raja 6 rasa yang diproses secara tradisional.
                 </p>
             </div>
             <div class="mt-8 pt-6 border-t border-brandDark/15 flex items-center space-x-6">
@@ -206,11 +204,10 @@
 
     <!-- ============================================================== -->
     <!-- SECTION 3: BEST SELLERS & CRUD MENU LISTING                    -->
-    <!-- (Header dengan garis panjang + Card Pedestal + Filter/Sort)    -->
     <!-- ============================================================== -->
     <section id="katalog" class="max-w-7xl mx-auto py-16 px-6 sm:px-12">
         
-        <!-- Header Section dengan Garis Panjang persis di referensi -->
+        <!-- Header Section dengan Garis Panjang -->
         <div class="flex items-center justify-between pb-8">
             <div class="flex items-center space-x-6 flex-1">
                 <h3 class="font-serif text-3xl sm:text-4xl uppercase tracking-[0.15em] font-extrabold text-brandDark whitespace-nowrap">
@@ -221,113 +218,179 @@
             
             <!-- Tombol Tambah Menu CRUD Utama -->
             <button onclick="openModalTambah()" class="ml-6 bg-brandDark hover:bg-brandDeep text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-lg hover:shadow-brandDark/30 transition flex items-center space-x-2 whitespace-nowrap">
-                <span class="text-base leading-none text-brandPink font-bold">+</span>
+                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
                 <span>Tambah Menu</span>
             </button>
         </div>
 
-        <!-- Filter, Sorting & Live Search Controls (Menggunakan Tailwind) -->
-        <div class="bg-brandCreamDark/60 backdrop-blur border border-brandDark/10 rounded-2xl p-5 mb-12 shadow-sm">
-            <form action="<?= base_url() ?>" method="get" id="filterFormMain" class="flex flex-col md:flex-row gap-4 items-center justify-between">
-                
-                <!-- Category Pills (Filter) -->
-                <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
-                    <span class="text-xs font-bold uppercase tracking-wider text-brandDark/60 mr-1 hidden sm:inline">Kategori:</span>
-                    <a href="javascript:void(0)" onclick="applyCategory('Semua')" 
-                       class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border transition whitespace-nowrap <?= $selectedKat === 'Semua' ? 'bg-brandDark text-white border-brandDark shadow' : 'bg-white/80 text-brandDark border-brandDark/20 hover:border-brandDark' ?>">
-                        Semua
-                    </a>
-                    <?php foreach ($categories as $cat): ?>
-                        <a href="javascript:void(0)" onclick="applyCategory('<?= esc($cat) ?>')" 
-                           class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border transition whitespace-nowrap <?= $selectedKat === $cat ? 'bg-brandDark text-white border-brandDark shadow' : 'bg-white/80 text-brandDark border-brandDark/20 hover:border-brandDark' ?>">
-                            <?= esc($cat) ?>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
+        <!-- ============================================================== -->
+        <!-- UI FILTER & SORTING + MENU GRID (AJAX TANPA REFRESH HALAMAN)  -->
+        <!-- ============================================================== -->
+        <div id="katalogContainer" class="transition-opacity duration-300">
+            <div class="bg-brandCream border border-brandDark/15 rounded-2xl p-6 sm:p-7 shadow-sm mb-12">
+                <form action="<?= base_url() ?>" method="get" id="filterFormMain" onsubmit="event.preventDefault(); applySearchForm();">
+                    <input type="hidden" name="kategori" id="inputKategori" value="<?= esc($selectedKat) ?>">
+                    <input type="hidden" name="sort" id="inputSort" value="<?= esc($selectedSort) ?>">
+                    <input type="hidden" name="search" id="inputSearch" value="<?= esc($searchQuery) ?>">
 
-                <input type="hidden" name="kategori" id="inputKategori" value="<?= esc($selectedKat) ?>">
+                    <!-- Row 1: Left [Filters Button + Clear All], Right [Sort by Dropdown] -->
+                    <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-brandDark/10">
+                        
+                        <!-- Left: Filters Button + Clear All -->
+                        <div class="flex items-center space-x-4">
+                            <button type="button" onclick="toggleSearchInput()" 
+                                    class="inline-flex items-center space-x-2 border border-brandDark/25 hover:border-brandDark/50 bg-brandCream text-brandDark px-4 py-2 rounded-full text-xs font-semibold shadow-sm transition">
+                                <!-- Sliders / Filter Minimalist SVG Icon -->
+                                <svg class="w-3.5 h-3.5 text-brandDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                                <span>Filters</span>
+                            </button>
 
-                <!-- Search & Sorting Dropdown -->
-                <div class="flex items-center gap-3 w-full md:w-auto">
-                    <div class="relative flex-1 md:w-56">
-                        <input type="text" name="search" placeholder="Cari menu..." value="<?= esc($searchQuery) ?>" 
-                               class="w-full bg-white border border-brandDark/20 rounded-full py-1.5 pl-9 pr-3 text-xs text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brandPink">
-                        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                            <?php if (!empty($searchQuery) || ($selectedKat !== 'Semua' && !empty($selectedKat)) || !empty($selectedSort)): ?>
+                                <button type="button" onclick="clearAllFilters()" class="text-xs font-semibold text-brandPink hover:underline transition">
+                                    Clear all
+                                </button>
+                            <?php endif; ?>
+                        </div>
+
+                        <!-- Right: Sort by Dropdown with Chevron -->
+                        <div class="relative">
+                            <select name="sort" id="selectSortMain" onchange="applySort(this.value)" 
+                                    class="appearance-none bg-brandCream border border-brandDark/25 hover:border-brandDark/50 rounded-xl py-2 pl-4 pr-9 text-xs font-medium text-brandDark focus:outline-none focus:ring-1 focus:ring-brandPink focus:border-brandPink cursor-pointer shadow-sm">
+                                <option value="">Sort by</option>
+                                <option value="harga_asc" <?= $selectedSort === 'harga_asc' ? 'selected' : '' ?>>Harga: Rendah ke Tinggi</option>
+                                <option value="harga_desc" <?= $selectedSort === 'harga_desc' ? 'selected' : '' ?>>Harga: Tinggi ke Rendah</option>
+                                <option value="nama_asc" <?= $selectedSort === 'nama_asc' ? 'selected' : '' ?>>Nama: A - Z</option>
+                                <option value="nama_desc" <?= $selectedSort === 'nama_desc' ? 'selected' : '' ?>>Nama: Z - A</option>
+                                <option value="rating_desc" <?= $selectedSort === 'rating_desc' ? 'selected' : '' ?>>Rating Tertinggi</option>
+                                <option value="stok_desc" <?= $selectedSort === 'stok_desc' ? 'selected' : '' ?>>Stok Terbanyak</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-brandDark/60">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Sorting Dropdown -->
-                    <select name="sort" onchange="document.getElementById('filterFormMain').submit()" 
-                            class="bg-white border border-brandDark/20 rounded-full py-1.5 px-4 text-xs font-medium text-brandDark focus:outline-none focus:border-brandPink cursor-pointer">
-                        <option value="">Urutkan</option>
-                        <option value="harga_asc" <?= $selectedSort === 'harga_asc' ? 'selected' : '' ?>>Harga: Rendah ke Tinggi</option>
-                        <option value="harga_desc" <?= $selectedSort === 'harga_desc' ? 'selected' : '' ?>>Harga: Tinggi ke Rendah</option>
-                        <option value="nama_asc" <?= $selectedSort === 'nama_asc' ? 'selected' : '' ?>>Nama: A - Z</option>
-                        <option value="nama_desc" <?= $selectedSort === 'nama_desc' ? 'selected' : '' ?>>Nama: Z - A</option>
-                        <option value="rating_desc" <?= $selectedSort === 'rating_desc' ? 'selected' : '' ?>>Rating Tertinggi</option>
-                    </select>
+                    <!-- Collapsible Search Input -->
+                    <div id="searchBarWrapper" class="<?= empty($searchQuery) ? 'hidden' : '' ?> pt-4 pb-2">
+                        <div class="relative max-w-md">
+                            <input type="text" id="liveSearchInput" placeholder="Ketik nama menu, rempah, atau bumbu..." value="<?= esc($searchQuery) ?>" 
+                                   class="w-full bg-brandCream border border-brandDark/25 rounded-full py-2 pl-9 pr-4 text-xs text-brandDark placeholder-brandDark/40 focus:outline-none focus:border-brandPink"
+                                   onkeydown="if(event.key==='Enter'){event.preventDefault();applySearch(this.value);}">
+                            <svg class="w-4 h-4 text-brandDark/50 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        </div>
+                    </div>
 
-                    <?php if (!empty($searchQuery) || ($selectedKat !== 'Semua' && !empty($selectedKat)) || !empty($selectedSort)): ?>
-                        <a href="<?= base_url() ?>" class="text-xs text-brandDark/60 hover:text-brandDark underline whitespace-nowrap">Reset</a>
+                    <!-- Row 2: Active Filter Chips & Category Pills (Dark Rounded Pills dengan icon [x] persis gambar) -->
+                    <div class="pt-4 flex flex-wrap items-center gap-2">
+                        <!-- Chip: Semua -->
+                        <button type="button" onclick="applyCategory('Semua')" 
+                                class="<?= $selectedKat === 'Semua' ? 'bg-neutral-900 text-white' : 'bg-brandCreamDark hover:bg-[#E2D6C3] text-brandDark border border-brandDark/10' ?> px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center space-x-1.5 transition">
+                            <span>Semua Menu</span>
+                            <?php if ($selectedKat === 'Semua'): ?>
+                                <span class="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">&times;</span>
+                            <?php endif; ?>
+                        </button>
+
+                        <!-- Category Chips -->
+                        <?php foreach ($categories as $cat): ?>
+                            <?php $isActive = ($selectedKat === $cat); ?>
+                            <button type="button" onclick="applyCategory('<?= $isActive ? 'Semua' : esc($cat) ?>')" 
+                                    class="<?= $isActive ? 'bg-neutral-900 text-white' : 'bg-brandCreamDark hover:bg-[#E2D6C3] text-brandDark border border-brandDark/10' ?> px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center space-x-1.5 transition">
+                                <span><?= esc($cat) ?></span>
+                                <?php if ($isActive): ?>
+                                    <span class="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">&times;</span>
+                                <?php endif; ?>
+                            </button>
+                        <?php endforeach; ?>
+
+                    <!-- Active Sort Chip (jika sort terpilih) -->
+                    <?php if (!empty($selectedSort)): ?>
+                        <button type="button" onclick="clearSort()" 
+                                class="bg-neutral-900 text-white px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center space-x-1.5 transition">
+                            <span>
+                                <?php
+                                    switch($selectedSort) {
+                                        case 'harga_asc': echo 'Harga: Rendah ke Tinggi'; break;
+                                        case 'harga_desc': echo 'Harga: Tinggi ke Rendah'; break;
+                                        case 'nama_asc': echo 'Nama: A - Z'; break;
+                                        case 'nama_desc': echo 'Nama: Z - A'; break;
+                                        case 'rating_desc': echo 'Rating Tertinggi'; break;
+                                        case 'stok_desc': echo 'Stok Terbanyak'; break;
+                                        default: echo esc($selectedSort); break;
+                                    }
+                                ?>
+                            </span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">&times;</span>
+                        </button>
+                    <?php endif; ?>
+
+                    <!-- Active Search Chip (jika search terisi) -->
+                    <?php if (!empty($searchQuery)): ?>
+                        <button type="button" onclick="clearSearch()" 
+                                class="bg-neutral-900 text-white px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center space-x-1.5 transition">
+                            <span>Pencarian: "<?= esc($searchQuery) ?>"</span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">&times;</span>
+                        </button>
                     <?php endif; ?>
                 </div>
+
             </form>
         </div>
 
-        <!-- 4-Column Card Grid (Persis tata letak Best Sellers di gambar referensi) -->
+        <!-- ============================================================== -->
+        <!-- 4-COLUMN CARD GRID (GAMBAR HAMPIR MEMENUHI BOX)               -->
+        <!-- ============================================================== -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <?php if (!empty($menuList)): ?>
                 <?php foreach ($menuList as $item): ?>
                     <div class="group flex flex-col items-center text-center">
                         
-                        <!-- Card Pedestal Container -->
-                        <div class="relative w-full aspect-square bg-[#E5D7C2] rounded-[32px] p-5 flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                            <!-- Circular Pedestal Illusion -->
-                            <div class="absolute bottom-4 w-4/5 h-10 bg-brandDark/20 rounded-[100%] blur-[6px]"></div>
-                            <div class="absolute bottom-6 w-3/4 h-8 bg-brandDark/70 rounded-[100%] border border-brandPink/30"></div>
+                        <!-- Card Box Container (Gambar hampir memenuhi box dengan padding minimal p-2) -->
+                        <div class="relative w-full aspect-square bg-[#E5D7C2] rounded-[28px] p-2 sm:p-2.5 flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
                             
-                            <!-- Foto Makanan Nasi Bekepor -->
-                            <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="relative z-10 w-4/5 h-4/5 block">
+                            <!-- Foto Makanan Nasi Bekepor (Hampir memenuhi seluruh frame box) -->
+                            <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="relative z-10 w-full h-full block overflow-hidden rounded-[22px]">
                                 <img src="<?= esc($item['gambar']) ?>" alt="<?= esc($item['nama_makanan']) ?>" 
-                                     class="w-full h-full object-cover rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </a>
 
-                            <!-- Rating badge -->
-                            <span class="absolute top-3 right-3 z-20 bg-brandDark/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full border border-brandPink/30 flex items-center space-x-1">
-                                <span class="text-amber-300">★</span>
+                            <!-- Minimalist Rating badge -->
+                            <span class="absolute top-4 right-4 z-20 bg-brandDark/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full border border-brandPink/30 flex items-center space-x-1 shadow">
+                                <svg class="w-3 h-3 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                                 <span><?= esc($item['rating']) ?></span>
                             </span>
 
-                            <!-- Floating Action Buttons (Detail, CRUD Edit & Delete) -->
+                            <!-- Floating Action Buttons (Detail, Edit & Delete dengan Icon Minimalis) -->
                             <div class="absolute inset-0 bg-brandDark/80 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 z-30 p-4">
                                 <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" 
-                                   class="bg-brandPink hover:bg-brandPinkLight hover:text-brandDark text-white font-bold px-4 py-2 rounded-full text-xs transition shadow-lg w-32 flex items-center justify-center space-x-1">
-                                    <span>👁️</span>
+                                   class="bg-brandPink hover:bg-brandPinkLight hover:text-brandDark text-white font-bold px-4 py-2 rounded-full text-xs transition shadow-lg w-32 flex items-center justify-center space-x-1.5">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                                     <span>Detail Menu</span>
                                 </a>
                                 <div class="flex items-center space-x-2">
                                     <button onclick='openModalEdit(<?= json_encode($item) ?>)' 
                                             class="bg-white hover:bg-gray-100 text-brandDark font-semibold px-3 py-1.5 rounded-full text-xs transition shadow flex items-center space-x-1">
-                                        <span>✏️</span>
+                                        <svg class="w-3 h-3 text-brandDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                                         <span>Edit</span>
                                     </button>
                                     <a href="<?= base_url('makanan/delete/' . $item['id']) ?>" 
                                        onclick="return confirm('Apakah Anda yakin ingin menghapus menu \'<?= esc($item['nama_makanan']) ?>\'?')"
                                        class="bg-rose-600 hover:bg-rose-700 text-white font-semibold px-3 py-1.5 rounded-full text-xs transition shadow flex items-center space-x-1">
-                                        <span>🗑️</span>
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                                         <span>Hapus</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Pill Tag (Persis di bawah gambar seperti CROISSANT / BAGUETTE) -->
+                        <!-- Pill Tag (Kategori) -->
                         <div class="mt-5">
                             <span class="border border-brandDark/40 text-brandDark text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full inline-block">
                                 <?= esc($item['kategori']) ?>
                             </span>
                         </div>
 
-                        <!-- Menu Name (Link to Detail) & Price -->
+                        <!-- Menu Name & Price -->
                         <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="font-serif text-lg font-bold text-brandDark mt-3 leading-snug hover:text-brandPink transition block">
                             <?= esc($item['nama_makanan']) ?>
                         </a>
@@ -336,14 +399,15 @@
                             Rp <?= number_format($item['harga'], 0, ',', '.') ?>
                         </p>
 
-                        <!-- Deskripsi Singkat persis seperti caption referensi -->
+                        <!-- Deskripsi Singkat -->
                         <p class="text-gray-600 text-xs mt-2 line-clamp-2 leading-relaxed max-w-[240px]">
                             <?= esc($item['deskripsi']) ?>
                         </p>
 
                         <!-- Link Detail Bawah -->
-                        <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="text-[11px] text-brandDark/70 hover:text-brandPink font-bold mt-2 underline">
-                            Selengkapnya &rarr;
+                        <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="text-[11px] text-brandDark/70 hover:text-brandPink font-bold mt-2 inline-flex items-center space-x-1">
+                            <span>Selengkapnya</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </a>
 
                     </div>
@@ -352,16 +416,16 @@
                 <div class="col-span-full text-center py-16 bg-white/60 rounded-3xl border border-brandDark/10">
                     <p class="font-serif text-2xl text-brandDark">Menu Tidak Ditemukan</p>
                     <p class="text-sm text-gray-500 mt-2">Tidak ada menu yang sesuai dengan filter atau kata kunci pencarian.</p>
-                    <a href="<?= base_url() ?>" class="mt-4 inline-block bg-brandDark text-white px-6 py-2 rounded-full text-xs uppercase tracking-wider font-semibold">Tampilkan Semua</a>
+                    <button type="button" onclick="clearAllFilters()" class="mt-4 inline-block bg-brandDark hover:bg-brandDeep text-white px-6 py-2 rounded-full text-xs uppercase tracking-wider font-semibold transition">Tampilkan Semua</button>
                 </div>
             <?php endif; ?>
         </div>
+    </div> <!-- /#katalogContainer -->
     </section>
 
 
     <!-- ============================================================== -->
     <!-- SECTION 4: THE MAGIC BEHIND HANIF THEORY                       -->
-    <!-- (Deep background dengan 2 foto besar berdampingan)             -->
     <!-- ============================================================== -->
     <section class="bg-brandDark text-white py-24 px-6 sm:px-12 mt-12">
         <div class="max-w-7xl mx-auto">
@@ -374,14 +438,17 @@
                 </p>
             </div>
 
-            <!-- 2 Foto Besar Berdampingan (Foto AI Nasi Bekepor) -->
+            <!-- 2 Foto Besar Berdampingan -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                 <!-- Foto 1: AI Masterpiece -->
                 <div class="rounded-3xl overflow-hidden shadow-2xl border border-brandPink/30 group relative aspect-[4/3]">
                     <img src="<?= base_url('images/nasi_bekepor_detail_ai.jpg') ?>" alt="AI Masterpiece Hanif Theory" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/30 to-transparent flex items-end p-8">
                         <div>
-                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase">✨ AI Visual Generatif</span>
+                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase inline-flex items-center space-x-1.5">
+                                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+                                <span>AI Visual Generatif</span>
+                            </span>
                             <h4 class="font-serif text-2xl font-bold text-white mt-1">Daging Masak Bumi &amp; Sambal Raja</h4>
                             <p class="text-purple-200 text-xs mt-2 max-w-md font-light leading-relaxed">
                                 Gurih daging sapi karamelisasi dengan pedas tajam sambal terong ungu goreng khas pesisir Kutai.
@@ -395,10 +462,13 @@
                     <img src="<?= base_url('images/nasi_bekepor_ai.jpg') ?>" alt="Kendil Nasi Bekepor Hanif Theory" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/30 to-transparent flex items-end p-8">
                         <div>
-                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase">Tradisi Kendil Besi</span>
+                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase inline-flex items-center space-x-1.5">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <span>Tradisi Kendil Besi</span>
+                            </span>
                             <h4 class="font-serif text-2xl font-bold text-white mt-1">Nasi Liwet Bekepor Matang Sempurna</h4>
                             <p class="text-purple-200 text-xs mt-2 max-w-md font-light leading-relaxed">
-                                Dimasak di atas arang menyala sampai menciptakan kerak nasi (*intip*) gurih khas yang sangat dicari.
+                                Dimasak di atas arang menyala sampai menciptakan kerak nasi gurih khas yang sangat dicari.
                             </p>
                         </div>
                     </div>
@@ -410,7 +480,6 @@
 
     <!-- ============================================================== -->
     <!-- SECTION 5: READY TO TASTE & STAMP BADGE                        -->
-    <!-- (Split Call to action dengan circular badge seperti di gambar) -->
     <!-- ============================================================== -->
     <section class="max-w-7xl mx-auto py-20 px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <!-- Kolom Kiri: Headline & CTA -->
@@ -434,7 +503,7 @@
 
         <!-- Kolom Kanan: Stamp Seal + Big Banquet Picture -->
         <div class="lg:col-span-6 relative flex items-center justify-center">
-            <!-- Circular Stamp Badge -->
+            <!-- Circular Stamp Badge dengan Monogram Minimalis HT -->
             <div class="absolute -left-6 z-20 w-28 h-28 sm:w-32 sm:h-32 bg-brandPink text-white rounded-full flex items-center justify-center shadow-2xl border-4 border-white stamp-rotate">
                 <svg class="w-full h-full p-2" viewBox="0 0 100 100">
                     <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
@@ -444,8 +513,8 @@
                         </textPath>
                     </text>
                 </svg>
-                <div class="absolute inset-0 flex items-center justify-center text-xl">
-                    🍛
+                <div class="absolute inset-0 flex items-center justify-center font-serif font-black text-sm tracking-wider">
+                    HT
                 </div>
             </div>
 
@@ -627,11 +696,117 @@
         </div>
     </div>
 
-    <!-- Scripts for Interactivity (Modal & Filter) -->
+    <!-- Scripts for Interactivity (Modal & Non-Reloading Filter) -->
     <script>
+        function getFilterParams() {
+            const params = new URLSearchParams();
+            const katEl = document.getElementById('inputKategori');
+            const sortEl = document.getElementById('inputSort');
+            const searchEl = document.getElementById('inputSearch');
+
+            const kat = katEl ? katEl.value : 'Semua';
+            const sort = sortEl ? sortEl.value : '';
+            const search = searchEl ? searchEl.value : '';
+
+            if (kat && kat !== 'Semua') params.set('kategori', kat);
+            if (sort) params.set('sort', sort);
+            if (search) params.set('search', search);
+            return params;
+        }
+
+        async function loadKatalogAjax(params, updateUrl = true) {
+            const container = document.getElementById('katalogContainer');
+            if (!container) return;
+
+            container.classList.add('opacity-40', 'pointer-events-none');
+            const queryString = params.toString();
+            const url = '<?= base_url() ?>' + (queryString ? ('?' + queryString) : '');
+
+            try {
+                const response = await fetch(url, {
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newKatalog = doc.getElementById('katalogContainer');
+
+                if (newKatalog) {
+                    container.innerHTML = newKatalog.innerHTML;
+                    if (updateUrl) {
+                        window.history.pushState({}, '', url);
+                    }
+                }
+            } catch (err) {
+                console.error('AJAX Filter error:', err);
+                window.location.href = url;
+            } finally {
+                container.classList.remove('opacity-40', 'pointer-events-none');
+            }
+        }
+
+        window.addEventListener('popstate', function() {
+            const params = new URLSearchParams(window.location.search);
+            loadKatalogAjax(params, false);
+        });
+
         function applyCategory(cat) {
-            document.getElementById('inputKategori').value = cat;
-            document.getElementById('filterFormMain').submit();
+            const katEl = document.getElementById('inputKategori');
+            if (katEl) katEl.value = cat;
+            loadKatalogAjax(getFilterParams());
+        }
+
+        function applySort(sortVal) {
+            const sortEl = document.getElementById('inputSort');
+            if (sortEl) sortEl.value = sortVal;
+            loadKatalogAjax(getFilterParams());
+        }
+
+        function clearSort() {
+            const sortEl = document.getElementById('inputSort');
+            if (sortEl) sortEl.value = '';
+            loadKatalogAjax(getFilterParams());
+        }
+
+        function clearSearch() {
+            const searchEl = document.getElementById('inputSearch');
+            if (searchEl) searchEl.value = '';
+            const liveInput = document.getElementById('liveSearchInput');
+            if (liveInput) liveInput.value = '';
+            loadKatalogAjax(getFilterParams());
+        }
+
+        function clearAllFilters() {
+            const katEl = document.getElementById('inputKategori');
+            const sortEl = document.getElementById('inputSort');
+            const searchEl = document.getElementById('inputSearch');
+            if (katEl) katEl.value = 'Semua';
+            if (sortEl) sortEl.value = '';
+            if (searchEl) searchEl.value = '';
+            const liveInput = document.getElementById('liveSearchInput');
+            if (liveInput) liveInput.value = '';
+            loadKatalogAjax(new URLSearchParams());
+        }
+
+        function applySearch(query) {
+            const searchEl = document.getElementById('inputSearch');
+            if (searchEl) searchEl.value = query.trim();
+            loadKatalogAjax(getFilterParams());
+        }
+
+        function applySearchForm() {
+            const liveInput = document.getElementById('liveSearchInput');
+            if (liveInput) applySearch(liveInput.value);
+        }
+
+        function toggleSearchInput() {
+            const wrapper = document.getElementById('searchBarWrapper');
+            if (!wrapper) return;
+            wrapper.classList.toggle('hidden');
+            const input = document.getElementById('liveSearchInput');
+            if (!wrapper.classList.contains('hidden') && input) {
+                input.focus();
+            }
         }
 
         function openModalTambah() {

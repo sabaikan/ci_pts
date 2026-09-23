@@ -46,11 +46,12 @@
                 HANIF THEORY
             </a>
             <div class="flex items-center space-x-3">
-                <a href="<?= base_url() ?>#katalog" class="border border-white/30 hover:border-brandPink hover:text-brandPink px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition">
-                    &larr; Kembali ke Katalog
+                <a href="<?= base_url() ?>#katalog" class="border border-white/30 hover:border-brandPink hover:text-brandPink px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition inline-flex items-center space-x-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    <span>Kembali ke Katalog</span>
                 </a>
-                <button onclick="openModalEditDetail()" class="bg-brandPink hover:bg-brandPinkLight hover:text-brandDeep text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center space-x-1">
-                    <span>✏️</span>
+                <button onclick="openModalEditDetail()" class="bg-brandPink hover:bg-brandPinkLight hover:text-brandDeep text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center space-x-1.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                     <span>Edit Menu</span>
                 </button>
             </div>
@@ -81,17 +82,18 @@
                     <!-- AI & Origin Badges -->
                     <div class="absolute top-8 left-8 flex flex-col gap-2">
                         <span class="bg-brandDark/90 backdrop-blur-md text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-brandPink/30 uppercase tracking-widest flex items-center space-x-1.5 shadow-lg">
-                            <span>✨</span>
+                            <svg class="w-3 h-3 text-brandPinkLight" viewBox="0 0 24 24" fill="currentColor"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
                             <span>AI Culinary Masterpiece</span>
                         </span>
-                        <span class="bg-brandPink text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                            📍 <?= esc($menu['asal_daerah']) ?>
+                        <span class="bg-brandPink text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow inline-flex items-center space-x-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span><?= esc($menu['asal_daerah']) ?></span>
                         </span>
                     </div>
 
                     <!-- Rating pill -->
-                    <div class="absolute top-8 right-8 bg-white/90 backdrop-blur-md text-brandDark font-bold text-xs px-3.5 py-1.5 rounded-full shadow-lg border border-brandDark/10 flex items-center space-x-1">
-                        <span class="text-amber-500">★</span>
+                    <div class="absolute top-8 right-8 bg-white/90 backdrop-blur-md text-brandDark font-bold text-xs px-3.5 py-1.5 rounded-full shadow-lg border border-brandDark/10 flex items-center space-x-1.5">
+                        <svg class="w-3 h-3 text-amber-500 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         <span><?= esc($menu['rating']) ?> / 5.0</span>
                     </div>
                 </div>
@@ -99,7 +101,7 @@
                 <!-- Komposisi Rempah Otentik Kalimantan Timur -->
                 <div class="bg-white/80 backdrop-blur border border-brandDark/10 rounded-3xl p-6 shadow-sm">
                     <h4 class="font-serif text-lg font-bold text-brandDark uppercase tracking-wider mb-4 flex items-center space-x-2">
-                        <span>🌿</span>
+                        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
                         <span>Racikan Rempah Khas Kutai</span>
                     </h4>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
@@ -131,7 +133,7 @@
                 </div>
             </div>
 
-            <!-- Kolom Kanan: Detail Informasi, Filosofi, & FITUR TAMBAHAN Interaktif -->
+            <!-- Kolom Kanan: Detail Informasi & FITUR TAMBAHAN -->
             <div class="lg:col-span-6 space-y-8">
                 
                 <div>
@@ -152,7 +154,7 @@
                         </span>
                         <div class="h-6 w-px bg-brandDark/20"></div>
                         <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3.5 py-1.5 rounded-full border border-emerald-300">
-                            ✓ Tersedia <?= esc($menu['stok']) ?> Porsi
+                            Tersedia <?= esc($menu['stok']) ?> Porsi
                         </span>
                     </div>
                 </div>
@@ -176,7 +178,7 @@
                             <span class="text-[10px] font-bold uppercase tracking-widest text-brandPink">Fitur Tambahan Interaktif</span>
                             <h3 class="font-serif text-xl font-bold text-brandDark">Kalkulator Pesanan &amp; Level Rasa</h3>
                         </div>
-                        <span class="text-2xl">⚡</span>
+                        <svg class="w-5 h-5 text-brandPink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
                     </div>
 
                     <!-- Pilihan Level Pedas Sambal Raja -->
@@ -185,20 +187,23 @@
                         <div class="grid grid-cols-3 gap-2">
                             <label class="cursor-pointer">
                                 <input type="radio" name="pedas" value="Sedang" checked class="peer sr-only" onchange="updateCalc()">
-                                <div class="p-3 text-center rounded-2xl border border-gray-200 peer-checked:border-brandPink peer-checked:bg-purple-50 peer-checked:text-brandDark transition text-xs font-semibold">
-                                    🌶️ Sedang
+                                <div class="p-3 text-center rounded-2xl border border-gray-200 peer-checked:border-brandPink peer-checked:bg-purple-50 peer-checked:text-brandDark transition text-xs font-semibold flex items-center justify-center space-x-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    <span>Sedang</span>
                                 </div>
                             </label>
                             <label class="cursor-pointer">
                                 <input type="radio" name="pedas" value="Pedas Mantap" class="peer sr-only" onchange="updateCalc()">
-                                <div class="p-3 text-center rounded-2xl border border-gray-200 peer-checked:border-brandPink peer-checked:bg-purple-50 peer-checked:text-brandDark transition text-xs font-semibold">
-                                    🌶️🌶️ Pedas
+                                <div class="p-3 text-center rounded-2xl border border-gray-200 peer-checked:border-brandPink peer-checked:bg-purple-50 peer-checked:text-brandDark transition text-xs font-semibold flex items-center justify-center space-x-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                    <span>Pedas</span>
                                 </div>
                             </label>
                             <label class="cursor-pointer">
                                 <input type="radio" name="pedas" value="Gahar Mahakam" class="peer sr-only" onchange="updateCalc()">
-                                <div class="p-3 text-center rounded-2xl border border-gray-200 peer-checked:border-brandPink peer-checked:bg-purple-50 peer-checked:text-brandDark transition text-xs font-semibold">
-                                    🔥 Gahar
+                                <div class="p-3 text-center rounded-2xl border border-gray-200 peer-checked:border-brandPink peer-checked:bg-purple-50 peer-checked:text-brandDark transition text-xs font-semibold flex items-center justify-center space-x-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                                    <span>Gahar</span>
                                 </div>
                             </label>
                         </div>
@@ -244,13 +249,15 @@
 
                 <!-- Navigasi Aksi CRUD Cepat -->
                 <div class="flex items-center space-x-4 pt-2">
-                    <button onclick="openModalEditDetail()" class="border border-brandDark text-brandDark hover:bg-brandDark hover:text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition">
-                        ✏️ Edit Data Menu Ini
+                    <button onclick="openModalEditDetail()" class="border border-brandDark text-brandDark hover:bg-brandDark hover:text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition inline-flex items-center space-x-1.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                        <span>Edit Data Menu Ini</span>
                     </button>
                     <a href="<?= base_url('makanan/delete/' . $menu['id']) ?>" 
                        onclick="return confirm('Hapus permanen menu <?= esc($menu['nama_makanan']) ?>?')"
-                       class="text-rose-600 hover:text-rose-800 text-xs font-bold uppercase tracking-wider py-2.5 transition">
-                        🗑️ Hapus Menu
+                       class="text-rose-600 hover:text-rose-800 text-xs font-bold uppercase tracking-wider py-2.5 transition inline-flex items-center space-x-1.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        <span>Hapus Menu</span>
                     </a>
                 </div>
 
@@ -265,19 +272,21 @@
                 <h3 class="font-serif text-2xl sm:text-3xl font-extrabold uppercase tracking-widest text-brandDark">
                     MENU LAINNYA DI HANIF THEORY
                 </h3>
-                <a href="<?= base_url() ?>#katalog" class="text-xs font-bold uppercase tracking-wider text-brandPink hover:underline">
-                    Lihat Semua &rarr;
+                <a href="<?= base_url() ?>#katalog" class="text-xs font-bold uppercase tracking-wider text-brandPink hover:underline inline-flex items-center space-x-1">
+                    <span>Lihat Semua</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
                 <?php foreach ($relatedMenus as $rel): ?>
                     <a href="<?= base_url('makanan/detail/' . $rel['id']) ?>" class="group block text-center">
-                        <div class="relative w-full aspect-square bg-[#E5D7C2] rounded-[32px] p-4 flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
+                        <div class="relative w-full aspect-square bg-[#E5D7C2] rounded-[28px] p-2 flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
                             <img src="<?= esc($rel['gambar']) ?>" alt="<?= esc($rel['nama_makanan']) ?>" 
-                                 class="w-4/5 h-4/5 object-cover rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-105">
-                            <span class="absolute top-3 right-3 bg-brandDark text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-                                ★ <?= esc($rel['rating']) ?>
+                                 class="w-full h-full object-cover rounded-[22px] shadow-lg transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 right-4 bg-brandDark text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center space-x-1 shadow">
+                                <svg class="w-2.5 h-2.5 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <span><?= esc($rel['rating']) ?></span>
                             </span>
                         </div>
                         <span class="border border-brandDark/30 text-brandDark text-[9px] font-bold uppercase tracking-[0.2em] px-3 py-0.5 rounded-full inline-block mt-4">
@@ -400,7 +409,7 @@
         function simulasiOrder() {
             let pedas = document.querySelector('input[name="pedas"]:checked').value;
             let total = document.getElementById('totalDisplay').innerText;
-            alert('🎉 Terima kasih! Pesanan simulasi untuk <?= esc($menu['nama_makanan']) ?> (' + currentQty + ' porsi, Level: ' + pedas + ') dengan ' + total + ' berhasil dibuat!');
+            alert('Terima kasih! Pesanan simulasi untuk <?= esc($menu['nama_makanan']) ?> (' + currentQty + ' porsi, Level: ' + pedas + ') dengan total ' + total + ' berhasil dibuat.');
         }
 
         function openModalEditDetail() {
