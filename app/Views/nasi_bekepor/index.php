@@ -68,10 +68,10 @@
     <!-- ========================================== -->
     <header class="bg-brandDark text-white pt-6 pb-20 px-6 sm:px-12 relative overflow-hidden">
         
-        <!-- Navbar (Mirip referensi dengan pill buttons) -->
+        <!-- Navbar -->
         <nav class="max-w-7xl mx-auto flex items-center justify-between border-b border-brandPink/20 pb-6">
             <a href="<?= base_url() ?>" class="font-serif text-2xl tracking-[0.25em] font-extrabold uppercase hover:text-brandPinkLight transition">
-                BEKEPOR THEORY
+                HANIF THEORY
             </a>
 
             <div class="flex items-center space-x-3 sm:space-x-4">
@@ -98,54 +98,60 @@
 
         <!-- Big Hero Title & Description -->
         <div class="max-w-4xl mx-auto text-center mt-16 sm:mt-20">
+            <div class="inline-block bg-brandPink/20 border border-brandPink/40 text-brandPinkLight px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest mb-4">
+                ✨ Traditional Kutai Rice Reimagined
+            </div>
             <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl tracking-[0.08em] font-extrabold uppercase leading-none drop-shadow-sm">
-                BEKEPOR THEORY
+                HANIF THEORY
             </h1>
             <p class="mt-6 text-sm sm:text-base text-purple-200/90 max-w-2xl mx-auto leading-relaxed font-light">
-                At Bekepor Theory, we turn fragrant rice, infused coconut milk, and ancient Kutai herbs into royal culinary perfection. Warm, savory, and delicately spiced — each mouthful is a royal experiment in sheer happiness.
+                At Hanif Theory, we turn fragrant rice, infused coconut milk, and ancient Kutai herbs into royal culinary perfection. Warm, savory, and delicately spiced — each mouthful is a royal experiment in sheer happiness.
             </p>
         </div>
 
-        <!-- 3 Featured Plates (Persis 3 foto jejer di referensi) -->
+        <!-- 3 Featured Plates (Dilengkapi Gambar AI Nasi Bekepor) -->
         <div class="max-w-6xl mx-auto mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
-            <!-- Plate 1 -->
-            <div class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border border-brandPink/20 shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <!-- Plate 1 (AI Image) -->
+            <a href="<?= base_url('makanan/detail/1') ?>" class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border border-brandPink/30 shadow-2xl transition-all duration-500 hover:-translate-y-2 block">
                 <div class="h-64 sm:h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80" alt="Nasi Bekepor Daging Masak Bumi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="<?= base_url('images/nasi_bekepor_ai.jpg') ?>" alt="Nasi Bekepor Daging Masak Bumi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-transparent to-transparent flex items-end p-5">
+                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/20 to-transparent flex items-end p-5">
                     <div>
-                        <span class="text-[11px] font-semibold tracking-widest uppercase text-brandPinkLight">Khas Kutai Kartanegara</span>
+                        <span class="text-[10px] font-bold tracking-widest uppercase bg-brandPink text-white px-2.5 py-0.5 rounded-full inline-block mb-1">✨ AI Generated Art</span>
                         <h4 class="font-serif text-xl font-bold text-white">Nasi Bekepor Daging Bumi</h4>
+                        <span class="text-xs text-brandPinkLight font-semibold">Lihat Detail &rarr;</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <!-- Plate 2 (Centerpiece / Highlight) -->
-            <div class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border-2 border-brandPink shadow-2xl transition-all duration-500 hover:-translate-y-3 md:-translate-y-4">
+            <!-- Plate 2 (Centerpiece / AI Detail Highlight) -->
+            <a href="<?= base_url('makanan/detail/8') ?>" class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border-2 border-brandPink shadow-2xl transition-all duration-500 hover:-translate-y-3 md:-translate-y-4 block">
                 <div class="h-72 sm:h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80" alt="Nasi Bekepor Royal Sultan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="<?= base_url('images/nasi_bekepor_detail_ai.jpg') ?>" alt="Nasi Bekepor Royal Sultan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/20 to-transparent flex items-end p-6">
+                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/30 to-transparent flex items-end p-6">
                     <div>
-                        <span class="bg-brandPink text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">Hidangan Keraton</span>
+                        <span class="bg-brandPink text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">✨ AI Royal Feast</span>
                         <h4 class="font-serif text-2xl font-bold text-white">Nasi Bekepor Royal Sultan</h4>
+                        <span class="text-xs text-brandPinkLight font-semibold">Jelajahi Resep Keraton &rarr;</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Plate 3 -->
-            <div class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border border-brandPink/20 shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <a href="<?= base_url('makanan/detail/2') ?>" class="group relative rounded-3xl overflow-hidden bg-brandDeep/60 border border-brandPink/30 shadow-2xl transition-all duration-500 hover:-translate-y-2 block">
                 <div class="h-64 sm:h-72 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=700&q=80" alt="Nasi Bekepor Ikan Haruan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-transparent to-transparent flex items-end p-5">
+                <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/20 to-transparent flex items-end p-5">
                     <div>
                         <span class="text-[11px] font-semibold tracking-widest uppercase text-brandPinkLight">Sungai Mahakam</span>
                         <h4 class="font-serif text-xl font-bold text-white">Nasi Bekepor Ikan Haruan</h4>
+                        <span class="text-xs text-brandPinkLight font-semibold">Lihat Detail &rarr;</span>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </header>
 
@@ -158,14 +164,14 @@
         <!-- Kolom Kiri: Foto berseni + badge doodle -->
         <div class="lg:col-span-6 relative">
             <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
-                <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Rempah Nasi Bekepor" class="w-full h-full object-cover">
+                <img src="<?= base_url('images/nasi_bekepor_ai.jpg') ?>" alt="Rempah Nasi Bekepor Hanif Theory" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-brandDark/10 mix-blend-multiply"></div>
             </div>
 
-            <!-- Artistic line doodle badge overlay persis gaya ilustrasi roti di gambar -->
+            <!-- Artistic line doodle badge overlay -->
             <div class="absolute -bottom-8 -right-4 sm:-bottom-10 sm:right-6 bg-brandDark text-white p-6 rounded-3xl shadow-2xl border-2 border-brandPink/40 max-w-[240px] transform rotate-2">
-                <svg class="w-10 h-10 text-brandPink mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                <p class="font-serif text-sm font-semibold tracking-wide leading-tight">Warisan Adat Kerajaan Kutai Sejak Abad ke-13</p>
+                <span class="text-2xl block mb-1">👑</span>
+                <p class="font-serif text-sm font-semibold tracking-wide leading-tight">Hanif Theory: Cita Rasa Bangsawan Kutai Abad ke-13</p>
             </div>
         </div>
 
@@ -177,10 +183,10 @@
             </h2>
             <div class="mt-8 space-y-5 text-gray-700 font-light leading-relaxed text-sm sm:text-base">
                 <p>
-                    Nasi Bekepor merupakan sajian pusaka tanah Kutai Kartanegara, Kalimantan Timur, yang pada masa silam dipersembahkan khusus bagi para bangsawan dan tamu agung Kesultanan Kutai.
+                    Di bawah naungan <strong>HANIF THEORY</strong>, Nasi Bekepor dihadirkan kembali dengan menjaga keaslian racikan bumbu khas Kesultanan Kutai Kartanegara, Kalimantan Timur.
                 </p>
                 <p>
-                    Dimasak perlahan di dalam kuali besi (*kendil*) bersama daun salam, kemangi, minyak sayur, dan potongan ikan asin jambal, aroma wangi yang menguar menjadi saksi bisu kekayaan rempah nusantara di pesisir khatulistiwa.
+                    Beras dimasak perlahan di dalam kuali tembikar dengan santan kelapa murni, daun kemangi segar, dan irisan ikan asin jambal roti. Dipadukan dengan Sambal Raja 6 rasa yang pedas bergelora.
                 </p>
             </div>
             <div class="mt-8 pt-6 border-t border-brandDark/15 flex items-center space-x-6">
@@ -190,8 +196,8 @@
                 </div>
                 <div class="h-10 w-px bg-brandDark/20"></div>
                 <div>
-                    <span class="block font-serif text-3xl font-extrabold text-brandDark">6 Rasa</span>
-                    <span class="text-xs uppercase tracking-wider text-gray-500 font-medium">Sambal Raja Otentik</span>
+                    <span class="block font-serif text-3xl font-extrabold text-brandDark">AI Ready</span>
+                    <span class="text-xs uppercase tracking-wider text-gray-500 font-medium">Visual Generatif</span>
                 </div>
             </div>
         </div>
@@ -273,15 +279,17 @@
                 <?php foreach ($menuList as $item): ?>
                     <div class="group flex flex-col items-center text-center">
                         
-                        <!-- Card Pedestal Container (Square rounded corners dengan efek pedestal elegan) -->
+                        <!-- Card Pedestal Container -->
                         <div class="relative w-full aspect-square bg-[#E5D7C2] rounded-[32px] p-5 flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
                             <!-- Circular Pedestal Illusion -->
                             <div class="absolute bottom-4 w-4/5 h-10 bg-brandDark/20 rounded-[100%] blur-[6px]"></div>
                             <div class="absolute bottom-6 w-3/4 h-8 bg-brandDark/70 rounded-[100%] border border-brandPink/30"></div>
                             
                             <!-- Foto Makanan Nasi Bekepor -->
-                            <img src="<?= esc($item['gambar']) ?>" alt="<?= esc($item['nama_makanan']) ?>" 
-                                 class="relative z-10 w-4/5 h-4/5 object-cover rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                            <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="relative z-10 w-4/5 h-4/5 block">
+                                <img src="<?= esc($item['gambar']) ?>" alt="<?= esc($item['nama_makanan']) ?>" 
+                                     class="w-full h-full object-cover rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                            </a>
 
                             <!-- Rating badge -->
                             <span class="absolute top-3 right-3 z-20 bg-brandDark/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full border border-brandPink/30 flex items-center space-x-1">
@@ -289,19 +297,26 @@
                                 <span><?= esc($item['rating']) ?></span>
                             </span>
 
-                            <!-- Floating Action Buttons (CRUD Edit & Delete) -->
-                            <div class="absolute inset-0 bg-brandDark/75 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-3 z-30">
-                                <button onclick='openModalEdit(<?= json_encode($item) ?>)' 
-                                        class="bg-white hover:bg-brandPink hover:text-white text-brandDark font-semibold px-3 py-1.5 rounded-full text-xs transition shadow-lg flex items-center space-x-1">
-                                    <span>✏️</span>
-                                    <span>Edit</span>
-                                </button>
-                                <a href="<?= base_url('makanan/delete/' . $item['id']) ?>" 
-                                   onclick="return confirm('Apakah Anda yakin ingin menghapus menu \'<?= esc($item['nama_makanan']) ?>\'?')"
-                                   class="bg-rose-600 hover:bg-rose-700 text-white font-semibold px-3 py-1.5 rounded-full text-xs transition shadow-lg flex items-center space-x-1">
-                                    <span>🗑️</span>
-                                    <span>Hapus</span>
+                            <!-- Floating Action Buttons (Detail, CRUD Edit & Delete) -->
+                            <div class="absolute inset-0 bg-brandDark/80 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 z-30 p-4">
+                                <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" 
+                                   class="bg-brandPink hover:bg-brandPinkLight hover:text-brandDark text-white font-bold px-4 py-2 rounded-full text-xs transition shadow-lg w-32 flex items-center justify-center space-x-1">
+                                    <span>👁️</span>
+                                    <span>Detail Menu</span>
                                 </a>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick='openModalEdit(<?= json_encode($item) ?>)' 
+                                            class="bg-white hover:bg-gray-100 text-brandDark font-semibold px-3 py-1.5 rounded-full text-xs transition shadow flex items-center space-x-1">
+                                        <span>✏️</span>
+                                        <span>Edit</span>
+                                    </button>
+                                    <a href="<?= base_url('makanan/delete/' . $item['id']) ?>" 
+                                       onclick="return confirm('Apakah Anda yakin ingin menghapus menu \'<?= esc($item['nama_makanan']) ?>\'?')"
+                                       class="bg-rose-600 hover:bg-rose-700 text-white font-semibold px-3 py-1.5 rounded-full text-xs transition shadow flex items-center space-x-1">
+                                        <span>🗑️</span>
+                                        <span>Hapus</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
@@ -312,10 +327,10 @@
                             </span>
                         </div>
 
-                        <!-- Menu Name & Price -->
-                        <h4 class="font-serif text-lg font-bold text-brandDark mt-3 leading-snug hover:text-brandPink transition">
+                        <!-- Menu Name (Link to Detail) & Price -->
+                        <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="font-serif text-lg font-bold text-brandDark mt-3 leading-snug hover:text-brandPink transition block">
                             <?= esc($item['nama_makanan']) ?>
-                        </h4>
+                        </a>
                         
                         <p class="text-brandPink font-extrabold text-sm mt-1">
                             Rp <?= number_format($item['harga'], 0, ',', '.') ?>
@@ -326,10 +341,10 @@
                             <?= esc($item['deskripsi']) ?>
                         </p>
 
-                        <!-- Stok Info -->
-                        <span class="text-[11px] text-gray-500 font-medium mt-2">
-                            Tersedia: <?= esc($item['stok']) ?> porsi
-                        </span>
+                        <!-- Link Detail Bawah -->
+                        <a href="<?= base_url('makanan/detail/' . $item['id']) ?>" class="text-[11px] text-brandDark/70 hover:text-brandPink font-bold mt-2 underline">
+                            Selengkapnya &rarr;
+                        </a>
 
                     </div>
                 <?php endforeach; ?>
@@ -345,45 +360,45 @@
 
 
     <!-- ============================================================== -->
-    <!-- SECTION 4: THE MAGIC BEHIND THE BEKEPOR                        -->
+    <!-- SECTION 4: THE MAGIC BEHIND HANIF THEORY                       -->
     <!-- (Deep background dengan 2 foto besar berdampingan)             -->
     <!-- ============================================================== -->
     <section class="bg-brandDark text-white py-24 px-6 sm:px-12 mt-12">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-14">
                 <h3 class="font-serif text-3xl sm:text-5xl uppercase tracking-[0.1em] font-extrabold">
-                    THE <span class="font-editorial-italic lowercase text-brandPink font-normal">magic</span> BEHIND THE BEKEPOR
+                    THE <span class="font-editorial-italic lowercase text-brandPink font-normal">magic</span> BEHIND HANIF THEORY
                 </h3>
                 <p class="text-purple-200/80 text-sm max-w-xl mx-auto mt-4 font-light">
                     Kombinasi beras pulen lokal Mahakam, kelapa tua pilihan, daun kemangi segar, dan racikan sambal raja yang diproses secara tradisional.
                 </p>
             </div>
 
-            <!-- 2 Foto Besar Berdampingan persis di referensi -->
+            <!-- 2 Foto Besar Berdampingan (Foto AI Nasi Bekepor) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                <!-- Foto 1: Minyak Kelapa & Santan Gurih -->
+                <!-- Foto 1: AI Masterpiece -->
                 <div class="rounded-3xl overflow-hidden shadow-2xl border border-brandPink/30 group relative aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=80" alt="Beras & Santan Nasi Bekepor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="<?= base_url('images/nasi_bekepor_detail_ai.jpg') ?>" alt="AI Masterpiece Hanif Theory" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/30 to-transparent flex items-end p-8">
                         <div>
-                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase">Rahasia Gurih</span>
-                            <h4 class="font-serif text-2xl font-bold text-white mt-1">Santan Kelapa Asli & Daun Salam</h4>
+                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase">✨ AI Visual Generatif</span>
+                            <h4 class="font-serif text-2xl font-bold text-white mt-1">Daging Masak Bumi &amp; Sambal Raja</h4>
                             <p class="text-purple-200 text-xs mt-2 max-w-md font-light leading-relaxed">
-                                Dimasak dalam kendil tradisional hingga dasar nasi menghasilkan lapisan kerak gurih yang menjadi ciri khas tiada dua.
+                                Gurih daging sapi karamelisasi dengan pedas tajam sambal terong ungu goreng khas pesisir Kutai.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Foto 2: Nasi Bekepor Matang Berselera -->
+                <!-- Foto 2: Nasi Bekepor Kendil -->
                 <div class="rounded-3xl overflow-hidden shadow-2xl border border-brandPink/30 group relative aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Sambal Raja & Sayur Asam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="<?= base_url('images/nasi_bekepor_ai.jpg') ?>" alt="Kendil Nasi Bekepor Hanif Theory" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-brandDeep via-brandDeep/30 to-transparent flex items-end p-8">
                         <div>
-                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase">Pelengkap Sempurna</span>
-                            <h4 class="font-serif text-2xl font-bold text-white mt-1">Sambal Raja & Sayur Asam Kutai</h4>
+                            <span class="text-brandPinkLight text-xs font-bold tracking-widest uppercase">Tradisi Kendil Besi</span>
+                            <h4 class="font-serif text-2xl font-bold text-white mt-1">Nasi Liwet Bekepor Matang Sempurna</h4>
                             <p class="text-purple-200 text-xs mt-2 max-w-md font-light leading-relaxed">
-                                Paduan rasa pedas, manis, dan segar dari terong asam khas Kalimantan menyempurnakan santap siang keluarga.
+                                Dimasak di atas arang menyala sampai menciptakan kerak nasi (*intip*) gurih khas yang sangat dicari.
                             </p>
                         </div>
                     </div>
@@ -405,7 +420,7 @@
                 THE <span class="font-editorial-italic lowercase text-brandPink font-normal">heritage</span>?
             </h3>
             <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-md font-light">
-                Kunjungi gerai kami atau pesan paket istimewa Nasi Bekepor Kutai Kartanegara langsung ke meja Anda. Cita rasa kehangatan Kalimantan Timur yang selalu dirindukan.
+                Kunjungi gerai <strong>HANIF THEORY</strong> atau pesan paket istimewa Nasi Bekepor Kutai Kartanegara langsung ke meja Anda. Cita rasa kehangatan Kalimantan Timur yang selalu dirindukan.
             </p>
             <div class="pt-2 flex flex-wrap gap-4">
                 <button onclick="openModalTambah()" class="bg-brandDark hover:bg-brandDeep text-white px-7 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl transition hover:shadow-brandDark/40">
@@ -419,13 +434,13 @@
 
         <!-- Kolom Kanan: Stamp Seal + Big Banquet Picture -->
         <div class="lg:col-span-6 relative flex items-center justify-center">
-            <!-- Circular Stamp Badge persis di tengah referensi -->
+            <!-- Circular Stamp Badge -->
             <div class="absolute -left-6 z-20 w-28 h-28 sm:w-32 sm:h-32 bg-brandPink text-white rounded-full flex items-center justify-center shadow-2xl border-4 border-white stamp-rotate">
                 <svg class="w-full h-full p-2" viewBox="0 0 100 100">
                     <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
-                    <text font-size="8.5" font-weight="bold" fill="currentColor" letter-spacing="2">
+                    <text font-size="8" font-weight="bold" fill="currentColor" letter-spacing="2">
                         <textPath xlink:href="#circlePath" startOffset="0%">
-                            • KALIMANTAN TIMUR • NASI BEKEPOR •
+                            • KALIMANTAN TIMUR • HANIF THEORY •
                         </textPath>
                     </text>
                 </svg>
@@ -436,7 +451,7 @@
 
             <!-- Banquet Box / Platter Image -->
             <div class="w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/11]">
-                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Sajian Nasi Bekepor" class="w-full h-full object-cover">
+                <img src="<?= base_url('images/nasi_bekepor_detail_ai.jpg') ?>" alt="Sajian Nasi Bekepor Hanif Theory" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
@@ -446,9 +461,9 @@
     <!-- FOOTER                                     -->
     <!-- ========================================== -->
     <footer class="bg-brandDark text-purple-200/80 py-12 px-6 border-t border-brandPink/20 text-center text-xs">
-        <p class="font-serif text-lg tracking-[0.2em] uppercase text-white font-bold mb-2">BEKEPOR THEORY</p>
-        <p>Aplikasi CRUD Katalog Kuliner PTS &bull; Kalimantan Timur &bull; Tema: #D946EF &amp; #581C87</p>
-        <p class="mt-2 text-white/50">&copy; <?= date('Y') ?> Bekepor Theory. Dibuat dengan CodeIgniter 4 &amp; Tailwind CSS.</p>
+        <p class="font-serif text-lg tracking-[0.2em] uppercase text-white font-bold mb-2">HANIF THEORY</p>
+        <p>Aplikasi CRUD &amp; Detail Katalog Kuliner &bull; Kalimantan Timur &bull; Tema: #D946EF &amp; #581C87</p>
+        <p class="mt-2 text-white/50">&copy; <?= date('Y') ?> Hanif Theory. Dibuat dengan CodeIgniter 4 &amp; Tailwind CSS.</p>
     </footer>
 
 
@@ -509,9 +524,9 @@
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-gray-700 mb-1">URL Gambar / Foto Makanan</label>
-                    <input type="url" name="gambar" placeholder="https://images.unsplash.com/..." 
+                    <input type="text" name="gambar" placeholder="<?= base_url('images/nasi_bekepor_ai.jpg') ?>" 
                            class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-brandPink">
-                    <span class="text-[11px] text-gray-400">Kosongkan jika ingin menggunakan gambar default.</span>
+                    <span class="text-[11px] text-gray-400">Kosongkan jika ingin menggunakan gambar AI default.</span>
                 </div>
 
                 <div>
@@ -590,7 +605,7 @@
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-gray-700 mb-1">URL Gambar / Foto</label>
-                    <input type="url" id="edit_gambar" name="gambar" 
+                    <input type="text" id="edit_gambar" name="gambar" 
                            class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-brandPink">
                 </div>
 

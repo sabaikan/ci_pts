@@ -29,9 +29,10 @@ class NasiBekepor extends BaseController
         $avgPrice  = !empty($menuList) ? array_sum(array_column($menuList, 'harga')) / $totalMenu : 0;
 
         $data = [
-            'title'         => 'BEKEPOR THEORY - Kuliner Tradisional Kalimantan Timur',
+            'title'         => 'HANIF THEORY - Kuliner Tradisional Kalimantan Timur (Nasi Bekepor)',
             'provinsi'      => 'Kalimantan Timur',
             'makanan_utama' => 'Nasi Bekepor',
+            'brand_name'    => 'HANIF THEORY',
             'menuList'      => $menuList,
             'categories'    => $allCategories,
             'selectedKat'   => $kategori,
@@ -42,6 +43,33 @@ class NasiBekepor extends BaseController
         ];
 
         return view('nasi_bekepor/index', $data);
+    }
+
+    /**
+     * READ DETAIL - Halaman Detail Khusus Menu
+     */
+    public function detail($id = null)
+    {
+        $menu = $this->nasiBekeporModel->find($id);
+        if (!$menu) {
+            return redirect()->to(base_url())->with('error', 'Menu kuliner tidak ditemukan!');
+        }
+
+        // Ambil menu rekomendasi pendamping (related dishes)
+        $relatedMenus = $this->nasiBekeporModel
+            ->where('id !=', $id)
+            ->orderBy('rating', 'DESC')
+            ->findAll(3);
+
+        $data = [
+            'title'        => esc($menu['nama_makanan']) . ' - HANIF THEORY',
+            'brand_name'   => 'HANIF THEORY',
+            'provinsi'     => 'Kalimantan Timur',
+            'menu'         => $menu,
+            'relatedMenus' => $relatedMenus,
+        ];
+
+        return view('nasi_bekepor/detail', $data);
     }
 
     /**
@@ -63,8 +91,8 @@ class NasiBekepor extends BaseController
 
         $gambar = $this->request->getPost('gambar');
         if (empty($gambar)) {
-            // Default gambar makanan lezat jika kosong
-            $gambar = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80';
+            // Gunakan gambar AI Nasi Bekepor jika kosong
+            $gambar = base_url('images/nasi_bekepor_ai.jpg');
         }
 
         $this->nasiBekeporModel->insert([
@@ -73,12 +101,12 @@ class NasiBekepor extends BaseController
             'asal_daerah'  => 'Kalimantan Timur',
             'harga'        => (int) $this->request->getPost('harga'),
             'stok'         => (int) $this->request->getPost('stok'),
-            'rating'       => (float) ($this->request->getPost('rating') ?: 4.8),
+            'rating'       => (float) ($this->request->getPost('rating') ?: 4.9),
             'deskripsi'    => $this->request->getPost('deskripsi'),
             'gambar'       => $gambar,
         ]);
 
-        return redirect()->to(base_url())->with('success', 'Menu Nasi Bekepor berhasil ditambahkan ke katalog!');
+        return redirect()->to(base_url())->with('success', 'Menu Nasi Bekepor berhasil ditambahkan ke katalog HANIF THEORY!');
     }
 
     /**
@@ -118,7 +146,7 @@ class NasiBekepor extends BaseController
             'gambar'       => $gambar,
         ]);
 
-        return redirect()->to(base_url())->with('success', 'Menu Nasi Bekepor berhasil diperbarui!');
+        return redirect()->to(base_url('makanan/detail/' . $id))->with('success', 'Menu Nasi Bekepor berhasil diperbarui!');
     }
 
     /**
@@ -133,6 +161,6 @@ class NasiBekepor extends BaseController
 
         $this->nasiBekeporModel->delete($id);
 
-        return redirect()->to(base_url())->with('success', 'Menu berhasil dihapus dari katalog!');
+        return redirect()->to(base_url())->with('success', 'Menu berhasil dihapus dari katalog HANIF THEORY!');
     }
 }

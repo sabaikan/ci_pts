@@ -6,6 +6,10 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'NasiBekepor::index');
 $routes->get('nasi-bekepor', 'NasiBekepor::index');
 
+// Halaman Detail
+$routes->get('makanan/detail/(:num)', 'NasiBekepor::detail/$1');
+$routes->get('detail/(:num)', 'NasiBekepor::detail/$1');
+
 // CRUD Routes
 $routes->post('makanan/store', 'NasiBekepor::store');
 $routes->post('makanan/update/(:num)', 'NasiBekepor::update/$1');
